@@ -1,0 +1,369 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>Hexo | Hexo</title><meta name="author" content="John Doe"><meta name="copyright" content="John Doe"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Spanner 全球化分布式数据库#Spanner #分布式数据库 #分布式事务 #Shard  [!md] Title: Google’s Globally-Distributed Database,Spanner is Google’s scalable, multi-version, globallydistributed, and synchronously-replicated data">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/2023/01/12/%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%8B%E5%8A%A1/Spanner%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Spanner 全球化分布式数据库#Spanner #分布式数据库 #分布式事务 #Shard  [!md] Title: Google’s Globally-Distributed Database,Spanner is Google’s scalable, multi-version, globallydistributed, and synchronously-replicated data">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-01-12T14:57:20.371Z">
+<meta property="article:modified_time" content="2023-01-07T04:59:44.071Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2023/01/12/%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%8B%E5%8A%A1/Spanner%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Hexo',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-01-07 12:59:44'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">2</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">0</div></a></div><hr/></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Hexo</a></span><div id="menus"><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">No title</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2023-01-12T14:57:20.371Z" title="Created 2023-01-12 22:57:20">2023-01-12</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2023-01-07T04:59:44.071Z" title="Updated 2023-01-07 12:59:44">2023-01-07</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post View:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="Spanner-全球化分布式数据库"><a href="#Spanner-全球化分布式数据库" class="headerlink" title="Spanner 全球化分布式数据库"></a>Spanner 全球化分布式数据库</h1><p>#Spanner #分布式数据库 #分布式事务 #Shard</p>
+<blockquote>
+<p>[!md] <strong>Title:</strong> Google’s Globally-Distributed Database,Spanner is Google’s scalable, multi-version, globallydistributed, and synchronously-replicated database</p>
+</blockquote>
+<p>论文中实现了广域的<strong>事务</strong>服务，也是在Google广泛使用的一种技术</p>
+<ul>
+<li><strong>R&#x2F;W Transaction</strong>: 2PC + 2PL + Paxos Group</li>
+<li><strong>R&#x2F;O Transaction</strong>: Snapshot isolation + Synchronized Clocks</li>
+</ul>
+<h2 id="Implementation"><a href="#Implementation" class="headerlink" title="Implementation"></a>Implementation</h2><h3 id="Spanner部署"><a href="#Spanner部署" class="headerlink" title="Spanner部署"></a>Spanner部署</h3><p>Spanner的部署叫做<strong>universe</strong>，可以让Spanne全球性的管理数据，谷歌中使用了三套Spanner部署分别用于:测试、研发、上线<br><img src="/../../img/universe.png" alt="universe.png"><br>如上图Spanner server的结构图中，Spanner由多个<strong>Zone</strong>(管理部署的单元、物理隔离的单元)组成。一个数据中心中可以由一个或者多个Zone<br>上图中的一个Zone有一个<strong>zonemaster(分配数据给spanserver)</strong> 和100-1000个<strong>spanserver(服务与客户端)<strong>，用户使用</strong>localtion proxies</strong> 定位每个Zone中分配数据服务的<strong>spanservers</strong></p>
+<ul>
+<li><strong>universe master</strong>:主要是一个控制台，它显示了关于 zone 的各种状态信息，可以用于相互之间的调试</li>
+<li><strong>Placement driver</strong>: 会周期性地与 spanserver 进行交互，来发现那些需要被转移的数据，或者是为了满足新的副本约束条件，或者是为了进行负载均衡</li>
+</ul>
+<h3 id="Spanserver-SoftWare-Stack"><a href="#Spanserver-SoftWare-Stack" class="headerlink" title="Spanserver SoftWare Stack"></a>Spanserver SoftWare Stack</h3><blockquote>
+<p>每个Spanserver的副本部署以及软件栈<br><img src="/../../img/spannersoftware.png"></p>
+</blockquote>
+<h4 id="组成部分"><a href="#组成部分" class="headerlink" title="组成部分"></a>组成部分</h4><ul>
+<li><strong>Colossus</strong>:放置tablet的文件系统,GFS的升级版</li>
+</ul>
+<ul>
+<li><p><strong>tablet</strong>:类似于bigtable中的tablet，实现如下映射<code>(key:string, timestamp:int64)-&gt;string</code> </p>
+</li>
+<li><p><strong>Paxos</strong>:共识算法于raft类似</p>
+</li>
+<li><p><strong>replica</strong>:Paxos的上层状态机</p>
+</li>
+<li><p><strong>locktable</strong>:实现并发控制,与分布式事务([[Distribute Transaction 笔记#两阶段锁（Two-Phase Locking）——悲观并发]])的二阶段锁相同</p>
+</li>
+<li><p><strong>Transaction manager</strong>：每个Paxos组中的支持分布式事务的软件</p>
+</li>
+<li></li>
+</ul>
+<h4 id="结构分析"><a href="#结构分析" class="headerlink" title="结构分析"></a>结构分析</h4><blockquote>
+<p>universe的结构中展示了多个Zone中都含有100-1000个Spanserver，Zone可以理解为一个区域(地域)的数据中心。而每个SpanServer都是由一个Paxos状态机和Paxos协议组成(但是一个Paxos Group的Paxos副本不一定在一个Zone中),不同Zone之间的数据复制也是通过Paxos Group</p>
+</blockquote>
+<p>Spanner于bigtable不同之处在于，Spanner分配Timestamp给数据作为版本号，是其更像是一个多版本数据库，而不是键值对的存储，tablet的状态存储在B-tree类似的文件与WAL中</p>
+<p>tablet的上层则是一个paxos的状态机方便复制(Paxos的一些细节我也没有研究过，复制过程可以参考[[Raft实验#Lab 2B : Log Replicated]])。每次写操作都需要写入两次：1.写入tablet的log中 2.写入Paxos的日志中。写操作必须在领导者上初始化 Paxos 协议，读操作可以直接从底层的任何副本的 tablet 中访问状态信息，只要这个副本足够新。副本的集合被称为一个 Paxos group。</p>
+<p>对于每个是领导者的副本而言，每个 spanserver 会实现一个锁表来实现并发控制。对于那些需要同步的操作，比如事务型的读操作，需要获得锁表中的锁，而其他类型的操作则可以不理会锁表。</p>
+<p>对于每个Paxos Group中都会有Leader会开启Transaction manager功能，每个拥有该功能的副本就称为一个<strong>Participant Leader</strong>，其余副本称为<strong>Participant slave</strong>。如果只有一个Paxos组如果一个事务只包含一个 Paxos 组(对于许多事务而言都是如此)，它就可以<font color="#00b0f0">绕过事务管理器</font>，因为锁表和 Paxos 二者一起可以保证事务性。如果一个事务包含了多 于一个 Paxos 组，那些组的领导者之间会彼此协调合作完成<font color="#00b0f0">两阶段提交</font>。其中一个参与者组，会被选为协调者，该组的 participant leader 被称为 <strong>coordinator leader</strong>，该组的 participant slaves 被称为 <strong>coordinator slaves</strong>。</p>
+<h3 id="directory"><a href="#directory" class="headerlink" title="directory"></a>directory</h3><p><img src="/../../img/directory.png"></p>
+<p>Spanner 对具有公共前缀的键做了一个抽象，称为 <strong>directory</strong>。目前一个 directory 是数据存放的基本单位。属于一个目录的所有数据，都具有相同的副本配置。 当数据在不同的 Paxos 组之间进行移动时，会一个目录一个目录地转移，如上图所示。Spanner 可能会移动一个目录从而减轻一个 Paxos 组的负担，也可能会把那些被频繁地一起访问的目录都放置到同一个组中，或者会把一个目录转移到距离访问者更近的地方。当客户端操作正在进行时，也可以进行目录的转移。我们可以预期在几秒内转移 50MB 的目录。</p>
+<p>directory 是数据复制和placement配置的基本单位。spanner中负载均衡的最小单位也是 directory，同时提供方法 MoveDir 可以手动将一个 directory 移动到指定的zone</p>
+<h3 id="Data-Model"><a href="#Data-Model" class="headerlink" title="Data Model"></a>Data Model</h3><p>spanner的行模型是 <code>(key:string, timestamp:int64) -&gt; row content</code>，可以看到跟big table的模型最大的不同是这里强化了row的概念，不再突出column；这样spanner的timestamp是赋给整行数据的，是有物理意义的，这使得spanner更像一个实现多版本并发的数据库，而在big table中，timestamp仅仅用于保存多个版本的key-value，跟并发完全无关；我觉得这也是为什么spanner称自己为semi-relational 数据库，而big table只称自己是semi-structure 数据库的原因。<br><img src="/../../img/spannerDataModel.png"></p>
+<p>Spanner 的数据模型不是纯粹关系型的，它的行必须有名称。更准确地说，每个表都需 要有包含一个或多个主键列的排序集合。这种需求，让 Spanner 看起来仍然有点像键值存储: 主键形成了一个行的名称，每个表都定义了从主键列到非主键列的映射。当一个行存在时，必须要求已经给行的一些键定义了一些值(即使是 NULL)。采用这种结构是很有用的，因为这可以让应用通过选择键来控制数据的局部性。</p>
+<h3 id="High-level-Organization"><a href="#High-level-Organization" class="headerlink" title="High-level Organization"></a>High-level Organization</h3><p>考虑下图3个数据中心的A、B、C(存在于不同的地域中)，数据存储在分片中,包含了数据库的行和一些键值对，例如A的分片中有键A-M的。现将该分片复制到B、C数据中心中，即使整个数据中心出现故障也可以继续。</p>
+<p>位于不同数据中心的spanserver形成了Paxos Group 如Figure3中所示，也就是一个Paxos Group中的副本可以存在于不同数据中心中。三个键A-M的shard是通过日志复制使状态机去更新键值对</p>
+<p><img src="/../../img/SpannerShard.jpg"></p>
+<h4 id="设计原因"><a href="#设计原因" class="headerlink" title="设计原因"></a>设计原因</h4><ul>
+<li><p>多个分片是为了获得更好的并行性</p>
+</li>
+<li><p>每个分片有一个Paxos组用于复制，若a-c的距离远复制开销大，也只需要a、b之间获得majority即可</p>
+</li>
+<li><p>数据中心的容错，速率过慢</p>
+</li>
+<li><p>副本靠近客户端，客户可以获得高性能的只读事务,其原理[[KVRaft#Read-Only Query:]]</p>
+</li>
+</ul>
+<h2 id="Challenge"><a href="#Challenge" class="headerlink" title="Challenge"></a>Challenge</h2><h3 id="Read-of-local-Relipca-yield-latest-write"><a href="#Read-of-local-Relipca-yield-latest-write" class="headerlink" title="Read of local Relipca yield latest write"></a>Read of local Relipca yield latest write</h3><p>追求更强的一致性，在ZooKeeper中实现的fast-read是弱的线性一致性。本地副本需要读到最新的写，在本文中将会用到</p>
+<h3 id="Trasaction-across-shard"><a href="#Trasaction-across-shard" class="headerlink" title="Trasaction across shard"></a>Trasaction across shard</h3><p>支持跨分片的事务，例如转账事务中一个分片是一个账户、另一个分片是目标账户，当我们要执行转账操作时可以像事务一样执行，并且具有ACID的语义</p>
+<h3 id="Transaction-must-be-serializable"><a href="#Transaction-must-be-serializable" class="headerlink" title="Transaction must be serializable"></a>Transaction must be serializable</h3><p>读取多条记录的事务必须是可序列化的。但是本地碎片可能反映已提交事务的不同子集!</p>
+<h2 id="True-Time"><a href="#True-Time" class="headerlink" title="True Time"></a>True Time</h2><table>
+<thead>
+<tr>
+<th><strong>Method</strong></th>
+<th><strong>return</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>TT.now()</td>
+<td>TTinterval: [earliest, latest]</td>
+</tr>
+<tr>
+<td>TT.after(t)</td>
+<td>true if t has definitely passed</td>
+</tr>
+<tr>
+<td>TT.before(t)</td>
+<td>true if t has definitely not arrived</td>
+</tr>
+</tbody></table>
+<p>TrueTime API 是一个非常有创意的东西，可以同步全球的时间。</p>
+<ul>
+<li><p>TT.now()可以获得一个绝对时间TTinterval，这个值和UnixTime是相同的，同时还能够得到一个误差e。</p>
+</li>
+<li><p>TT.after(t)和TT.before(t)是基于TT.now()实现的。</p>
+</li>
+</ul>
+<p>那这个TrueTime API实现靠的是GFS和原子钟。之所以要用两种技术来处理，是因为导致这两个技术的失败的原因是不同的。GPS会有一个天线，电波干扰会导致其失灵。原子钟很稳定。当GPS失灵的时候，原子钟仍然能保证在相当长的时间内，不会出现偏差。实际部署的时候。每个数据中心需要部署一些Master机器，其他机器上需要有一个slave进程来从Master同步。有的Master用GPS，有的Master用原子钟。</p>
+<blockquote>
+<p>Denote the absolute time of an event e by the function t<sub>abs</sub>(e). In more formal terms, TrueTime guarantees that for an invocation tt &#x3D; TT.now(), tt.earliest ≤ t<sub>abs</sub>(e<sub>now</sub>) ≤ tt.latest, where enow is the invocation event.</p>
+</blockquote>
+<h2 id="Concurrent-control"><a href="#Concurrent-control" class="headerlink" title="Concurrent control"></a>Concurrent control</h2><h3 id="Timestamp-Management"><a href="#Timestamp-Management" class="headerlink" title="Timestamp Management"></a>Timestamp Management</h3><p>Spanner使用TrueTime来控制并发，实现外部一致性。支持以下几种事务。</p>
+<ul>
+<li>读写事务：读写操作的集合</li>
+<li>只读事务：只有读操作，并且提供的<strong>snapshot isolation</strong>的功能，保证强一致性</li>
+<li>快照读,只读事务由客户端提供时间戳：可以读取stale data</li>
+<li>快照读,客户端提供时间范围<br><img src="/../../img/SpannerTransaction.png"></li>
+</ul>
+<p>上表是Spanner现在支持的事务。单独的写操作都被实现为读写事务 ； 单独的非快照被实现为只读事务。事务总有失败的时候，如果失败，对于这两种操作会自己重试，无需应用自己实现重试循环。</p>
+<p>时间戳的设计大大提高了只读事务的性能。事务开始的时候，要声明这个事务里没有写操作，只读事务可不是一个简单的没有写操作的读写事务。它会用一个系统时间戳去读，所以对于同时的其他的写操作是没有Block的(只读事务是lock free的)。而且只读事务可以在任意一台已经更新过的replica上面读。</p>
+<p>对于快照读操作，可以读取以前的数据，需要客户端指定一个时间戳或者一个时间范围。Spanner会找到一个已经充分更新好的replica上读取。</p>
+<p>还有一个<strong>有趣的特性</strong>的是，对于只读事务，如果执行到一半，该replica出现了错误。客户端没有必要在本地缓存刚刚读过的时间，因为是根据时间戳读取的。只要再用刚刚的时间戳读取，就可以获得一样的结果。</p>
+<h3 id="读写事务"><a href="#读写事务" class="headerlink" title="读写事务"></a>读写事务</h3><h4 id="RW-Transaction-without-TS"><a href="#RW-Transaction-without-TS" class="headerlink" title="RW Transaction without TS"></a>RW Transaction without TS</h4><p><img src="/../../img/SpannerRW.png"></p>
+<p>A、B是两个不同的数据中心，客户端最开始的请求的读操作并不是事务操作，目的是为了找到Paxos Group的leader，并且Leader在锁表中分配该数据的锁，当client获得返回值时进行提交(commit)，该实现与Lab3中的读操作服务本质相同。后续执行二段提交部分，提交完成后并释放锁。</p>
+<p>这种实现与[[Distribute Transaction 笔记]]中实现的2PC+2PL的实现方法相同，只不过加入了Paxos的容错设计</p>
+<h4 id="Assigning-Timestamp-to-RW-Transaction"><a href="#Assigning-Timestamp-to-RW-Transaction" class="headerlink" title="Assigning Timestamp to RW Transaction"></a>Assigning Timestamp to RW Transaction</h4><p>事务的读写将会用到二段锁，当所有的锁都已经获得以后，在任何锁被释放之前(也就是持有所有锁期间)，就可以给事务分配时间戳。对于一个给定的事务，Spanner 会为事务分配时间戳，这个时间戳是 Paxos 分配给 Paxos 写操作的，它代表了<font color="#00b0f0">事务提交的时间</font>。</p>
+<p>Spanner 依赖下面这些单调性:在每个 Paxos 组内，Spanner 会以单调增加的顺序给每个 Paxos 写操作分配时间戳，即使在跨越多个领导者时也是如此。一个单个的领导者副本，可以很容易地以单调增加的方式分配时间戳。在多个领导者之间就会强制实现彼此隔离的不连 贯:一个领导者必须只能分配属于它自己租约时间区间内的时间戳。要注意到，一旦一个时间戳 S 被分配，S<sub>max</sub> 就会被增加到 s，从而保证彼此隔离性(不连贯性)。</p>
+<ul>
+<li>S<sub>i</sub>：一个读写事务的时间戳，当S<sub>i</sub>被分配，S<sub>max</sub>就会增长到S</li>
+<li>T<sub>i</sub>：表示一个事务</li>
+<li>e<sub>i</sub>：代表一个事务的一些事件如开始或结束</li>
+<li>e<sub>i</sub><sup>server</sup> ：表示写事务T<sub>i</sub>的Commit请求到达Coordinator的时间</li>
+<li>t<sub>abs</sub>：一个时间的绝对时间</li>
+</ul>
+<p><strong>External consistency</strong> -&gt; 不变性(invariant)：如果事务T2开始发生在T1提交事务之前，T2的时间戳就必须大于T1的提交事务的时间戳——-tabs(e<sub>1</sub><sup>commit</sup>)&lt;tabs(e<sub>2</sub><sup>start</sup>)&#x3D;&gt;S<sub>1</sub> &lt; S<sub>2 </sub></p>
+<p><strong>Start</strong>：为一个事务 T<sub>i </sub>担任协调者的领导者分配一个提交时间戳 s<sub>i</sub>，不会小于 TT.now().latest 的值，TT.now().latest的值是在e<sub>i</sub><sup>server</sup>事件之后计算得到的。要注意，担任参与者的领导者， 在这里不起作用。第 4.2.1 节描述了这些担任参与者的领导者是如何参与下一条规则的实现的。</p>
+<p><strong>Commit Wait</strong>：担任协调者的领导者，必须确保客户端不能看到任何被 T<sub>i</sub> 提交的数据，直到 TT.after(s<sub>i</sub>)为真。提交等待，就是要确保 s<sub>i</sub> 会比 T<sub>i</sub> 的绝对提交时间小。Commit Wait 的证明如下图所示(只针对于R&#x2F;W 事物)</p>
+<ul>
+<li>commit wait：T1的时间戳小于其commit提交开始的绝对时间</li>
+<li>assumption：T2的开始时间大于T1 commit的事件的事件</li>
+<li>causality： T2开始的时间小于或等于其commit消息到coordinator的时间</li>
+<li>start：commit消息到达coordinator的时间小于等于T2的时间戳则事物开始</li>
+<li>transitivity：可以得到s1发生在s2之前</li>
+</ul>
+<p><img src="/../../img/SpannerProof.png"></p>
+<h4 id="detail"><a href="#detail" class="headerlink" title="detail"></a>detail</h4><p>Spanner在2PC开始之前读操作将会发生在transaction中被Client缓存，这样的话读操作就不会看见同一事务中写入的影响了</p>
+<p><strong>读写操作的实现细节</strong><br>读操作在读写事务中使用wound-wait方法去避免死锁。Client发起读操作到合适Paxos Group的leader副本，获取读锁并且读取最近的数据，在客户端事务存活的时候会不断的向leader发心跳，防止超时。当客户端完成了所有的读操作，并且缓存了所有的写操作，就开始了两阶段提交。客户端选择一个coordinator group，并给每一个leader发送coordinator的id和缓存的写数据。(由客户端驱动二段提交避免两次广域的链接)</p>
+<p><strong>写操作开始</strong><br>non-coordinator-leader首先会获取一个写锁，选择一个prepare时间戳大于之前事务已经分配时间戳的，通过Paxos记录prepare日志。每一个Participant的都要给coordinator发送他自己prepare的那个时间戳。</p>
+<p>coordinator leader首先获得写锁但是需要<font color="#00b0f0">跳过Prepare阶段</font>，在收到(hearing,应该是类似与心跳的机制)所有Participant的Prepare消息后，它需要准备一个时间戳给整个事务，并且commit timestamp S必须大于或等于所有的prepare的时间戳(满足4.1.3中的限制)，大于TT.now().lastest，同一时间coordinator收到commit消息(Participant回复Prepare消息是commit&#x2F;abort形式)并且大于leader分配给之前事务的时间戳</p>
+<p>在coordinator的副本apply commit的日志记录之前，为了遵循commit-wait规则coordinator leader需要等待TT.after(S)。因为coordinator leader需拿着S基于TT.now().lastest,并且。在commit-wait之后coordinator leader会commit的时间戳发送给client和所有Participant leader</p>
+<h3 id="只读事务-高性能读"><a href="#只读事务-高性能读" class="headerlink" title="只读事务:高性能读"></a>只读事务:高性能读</h3><ul>
+<li>快速的读从本地的(邻近的)分片中&#96;&#96;</li>
+<li>不需要<strong>二段锁</strong></li>
+<li>不需要<strong>二段提交</strong></li>
+</ul>
+<h4 id="Corretness"><a href="#Corretness" class="headerlink" title="Corretness"></a>Corretness</h4><p><strong>Serializeble:</strong> R&#x2F;W<sub>1</sub>（T1）  R&#x2F;O   R&#x2F;W<sub>2 </sub>（T2） R&#x2F;W</p>
+<p><strong>External consistency(外部一致性)</strong><br>Serializable+Real time，与线性一致性相似只不过Extenal consisitency是<font color="#00b0f0">事务级别的属性</font></p>
+<p><strong>示例</strong>：下一个事务必须看见上一个事务的写入</p>
+<ol>
+<li>如果事务T1再另一个事务T2开始之前提交, 则T1提交的时间戳会小于T2提交的时间戳</li>
+<li>如果T1&lt; T2  ，则T2 必须看见T1的写入</li>
+</ol>
+<h4 id="Bad-Plan-只读操作读取最新提交的值"><a href="#Bad-Plan-只读操作读取最新提交的值" class="headerlink" title="Bad Plan 只读操作读取最新提交的值"></a>Bad Plan 只读操作读取最新提交的值</h4><p>由于R&#x2F;O操作是不加锁的，T3在只读操作时Ry会读取到T2提交的值，因此违背了事务的隔离性也不是串行化。</p>
+<p><img src="/../../img/Bad_Read.png"></p>
+<h4 id="R-x2F-O-with-Snapshot-isolation"><a href="#R-x2F-O-with-Snapshot-isolation" class="headerlink" title="R&#x2F;O with Snapshot isolation"></a>R&#x2F;O with Snapshot isolation</h4><ol>
+<li>分配时间戳给事务:</li>
+</ol>
+<ul>
+<li><strong>R&#x2F;W:</strong> commit 提交开始(coordinator leader分配)</li>
+<li><strong>R&#x2F;O:</strong> Start 事务开始(paxos leader分配)</li>
+</ul>
+<ol start="2">
+<li>执行事务按照时间戳的顺序</li>
+<li>每个副本的数据存储都需要有时间戳作为版本号(MVCC,multiple version concurrent control)</li>
+</ol>
+<blockquote>
+<p>In both Bigtable and Spanner, we designed for long-lived transactions (for example, for report generation, which might take on the order of minutes), which perform poorly under optimistic concurrency control in the presence of conflicts</p>
+</blockquote>
+<p>论文中所讲到Spanner在事务(<strong>实际上是只读事务，读写事务还是需要加锁</strong>)上使用了乐观并发控制，对于只读事务我们是不加锁的，因此对于只读事务我们使用乐观并发控制。</p>
+<p>PS: 在FaRM论文中实现了对与读写事务的OCC，对于读操作是不加锁的</p>
+<p>DDIA中说到：Serilaizability + Snapshot isolation &#x3D; Optimistic concurrent control </p>
+<p>如下图：T1提交的时间戳为@10，T2提交的时间戳为@20，T3只读事务开始的时间戳为@15，读取y值，会按照时间戳的顺序，因此读取y值会现读@15以前的数据，满足了快照隔离性与可串行性</p>
+<p><img src="/../../img/Snapshot_isolation.png"></p>
+<h4 id="R-x2F-O-from-Local-Replica-non-Leader-of-Paxos"><a href="#R-x2F-O-from-Local-Replica-non-Leader-of-Paxos" class="headerlink" title="R&#x2F;O from Local Replica(non-Leader of Paxos)"></a>R&#x2F;O from Local Replica(non-Leader of Paxos)</h4><p>从当地副本进行只读事务，有可能只读事务之前写入还没有同步复制到该副本。例如：副本中没有W@10的操作</p>
+<p><strong>解决方案</strong></p>
+<ul>
+<li>Saft Time ：所有副本中会跟踪这个t<sub>safe</sub>值是所有副本中最大的时间戳，以此来保证副本是最新的。若读操作时间戳为@t,一个副本需要满足t&lt;&#x3D;t<sub>saft</sub> ,才能进行读写。</li>
+<li>Paxos按照时间戳的顺序发送写操作给副本</li>
+<li>在Rx@15执行前，需要等待大于@15的时间戳写入(与no-op操作道理是一样的)</li>
+<li>等待prepared但是未commit的事务执行</li>
+</ul>
+<h4 id="Clock-must-be-perfect"><a href="#Clock-must-be-perfect" class="headerlink" title="Clock must be perfect"></a>Clock must be perfect</h4><ul>
+<li><p>对只读事务很重要</p>
+</li>
+<li><p>只读事务的时间戳过大 &#x3D;&gt; 等待时间过长</p>
+</li>
+<li><p>只读事务的时间戳过小 &#x3D;&gt; 分配给T3更小的时间戳例如为5</p>
+</li>
+</ul>
+<p>Example of problem if r&#x2F;o xaction’s TS is too small:<br>  r&#x2F;w T1 @  0: Wx1 C<br>  r&#x2F;w T2 @ 10:         Wx2 C<br>  r&#x2F;o T3 @  5:                   Rx?<br>(C for commit)</p>
+<p>根据上述情形我们只会看见T1@0写入的x&#x3D;1的值，但是实际上T3开始在T2提交过后，根据external consistency：T3必须看见T2的写入x&#x3D;2。该问题就是不正确时钟导致的分配时间戳错误的问题,</p>
+<p>下述方案中将会解决不正确时钟导致时间戳过小的问题</p>
+<h4 id="Timestamp-are-interval"><a href="#Timestamp-are-interval" class="headerlink" title="Timestamp are interval"></a>Timestamp are interval</h4><p>  Time service yields a TTinterval &#x3D; [ earliest, latest ].<br>  The correct time is guaranteed to be somewhere in the interval.<br>  Interval width computed from measured network delays,<br>    clock drift assumptions, GPS specs.<br>  Figure 6: intervals are usually microseconds, but sometimes 10+ milliseconds.<br>  So: server clocks aren’t exactly synchronized, but TrueTime<br>    bounds how wrong a server’s clock can be.</p>
+<p>如何保证R&#x2F;O Txn不会的时间戳不会太小导致读写错误<br>4.12节两个规则[[#Assigning Timestamp to RW Transaction]]</p>
+<ul>
+<li><strong>Start rule</strong>:<br>  事务的时间戳<font color="#00b0f0"> TS &#x3D; TT.now().latest</font><br>  对于只读事务来说时间戳TS就是开始时间<br>  对于读写事务来说时间戳TS就是事务提交开始(commit begin)的时间，也就是prepared完成时间。</li>
+<li><strong>Commit wait</strong>, for r&#x2F;w xaction:<br> 在完成提交前, 延迟直到TS &lt; TS.now().earliest，保证该时间戳已经过去，因此只读操作永远不会选择在commit事务开始之前的时间戳。</li>
+</ul>
+<h4 id="update-example-with-interval"><a href="#update-example-with-interval" class="headerlink" title="update example with interval"></a>update example with interval</h4><p>该方案是T1提交然后T2开始，T2必须看见T1的写入，需要TS1 &lt; TS2<br>  r&#x2F;w T0 @  1: Wx1 C<br>                   |1———–10| |11————–20|<br>  r&#x2F;w T1 @ 10:         Wx2 P          C<br>                                 |10——–12|<br>  r&#x2F;o T2 @ 12:                           Rx?<br>(P for T1’s Prepare, C for T1 finishing Commit)</p>
+<p>在P中T2选择了TS2 &#x3D; TT.now().lastest &#x3D; 10，Commit-Wait确保C发生在TS2之后(@10过去)，C开始读取时钟获得间隔为11-20 (CommitWait TS.now().earliest &#x3D;11 &gt;10)。</p>
+<p>T3开始在C之后通过Commit-wait规则我们已经直到@10这个真实时间已经过去(assumption条件)，因此T3在@10之后，T2选择TS3&#x3D;TT.now().latest&#x3D;12,这个值是在当前时间之后所以是在@10之后,我们将会读到T2写入的值。</p>
+<blockquote>
+<p>为什么当T2在提交时，T3并发执行能够获得会得到T2的值? 因为根据lab3中只有committed的log才会应用(applied)到状态机，从而修改数据库的值。如果在处理只读事务T3时，并状态机没有应用T2@10写入的数据，会导致T3读取不到T2的值。</p>
+</blockquote>
+<p>我的猜想是<strong>saft time</strong>的机制解决该问题，等待大于@12的值写入数据库之后才能处理只读。因为我们已经分配了为@12的时间戳给了只读事务T3，执行顺序也不会出错，现在就是保证replica中一定由@10的写入。</p>
+<blockquote>
+<p>Commit-Wait的规则是保证序列化与时间戳的正确性。</p>
+</blockquote>
+<p>该例子只是解释了commit-wait+True Time的机制可以防止时钟的错误导致违背外部一致性，因此是否能够读写的T2的写入我想是必然的(因为读取不到T1的写入也违背外部一致性)，但是如何解决T2事务commit与T3并发处理的机制，还是取决于设计者。</p>
+<p>最后可得TS3&gt;TS2,因此T3的可以读到T2写入的X的值</p>
+<blockquote>
+<p>Why this provides external consistency for r&#x2F;o transactions:<br>  Given that T1 finishes before T2 starts.Commit wait means TS1 is <strong>guaranteed to be in the past.</strong> TS2 &#x3D; TT.now().latest is guaranteed to be &gt;&#x3D; correct time thus &gt;&#x3D; TS of any previous committed transaction (due to its commit wait)</p>
+</blockquote>
+<h4 id="detail-1"><a href="#detail-1" class="headerlink" title="detail"></a>detail</h4><p>分配时间戳需要参与到读事务的Paxos groups的协商，这样的话，Spanner需要一个Scope的表示每一个只读操作，可以描述整个读事务的键(PS：应该不需要coordinator的参加)</p>
+<p><strong>single Paxos</strong>：scop的值只被一个Paxos Group提供，client提交只读事务到leader。leader分配一个S<sub>read</sub>的时间戳并执行读操作。LastTS()是Paxos Group最后一次comitted的读操作，如果没有任何的已经准备的事务，S<sub>read</sub>&#x3D;LastTS()满足了external-consistency:事务将会看见最后一次写入的结果，因此只读事务将会安排到之后一次提交写事务完成之后</p>
+<p><strong>multiple Paxos</strong>：拥有多个的选项，最复杂的选项是所有groups的leader协商完基于LastTS()的S<sub>read</sub>，一个更简单的选着是clent避免协商的回合，当满足Sread &#x3D; TT.now().lastest。所有的读操作将会发送到up-to-date的副本</p>
+<h3 id="discussion"><a href="#discussion" class="headerlink" title="discussion"></a>discussion</h3><ul>
+<li>R&#x2F;W Txn &#x3D;&gt; 2PC + 2PL</li>
+<li>R&#x2F;O Txn &#x3D;&gt; Snapshot isolation + serializablity</li>
+<li>extenal consistency  &#x3D;&gt; timestamp order + time interval</li>
+</ul>
+<h2 id="FQA"><a href="#FQA" class="headerlink" title="FQA"></a>FQA</h2><p><a target="_blank" rel="noopener" href="https://pdos.csail.mit.edu/6.824/papers/spanner-faq.txt">https://pdos.csail.mit.edu/6.824/papers/spanner-faq.txt</a></p>
+<h4 id="Q-原子时钟是什么"><a href="#Q-原子时钟是什么" class="headerlink" title="Q: 原子时钟是什么?"></a>Q: 原子时钟是什么?</h4><p>A: 一个非常稳定的振荡器。有两种主要的技术被称为“原子钟”:铷钟和铯钟。两者都利用了外层电子状态的变化，这涉及到特定的能量量子和波长。人们可以通过观察电子的兴奋程度来精确地将信号发生器调节到那个波长。原子钟只是时钟的振荡器部分:它产生一个频率，使时钟以正确的频率滴答作响，但它自己不知道它是什么时间。为了提供时间，原子钟最初必须与时间同步，通常是通过GPS(它本身是由一堆原子钟提供时间的)。</p>
+<h4 id="Q-Spanner使用什么种类的原子时钟"><a href="#Q-Spanner使用什么种类的原子时钟" class="headerlink" title="Q: Spanner使用什么种类的原子时钟?"></a>Q: Spanner使用什么种类的原子时钟?</h4><p>A: 遗憾的是，论文没有说明。铷时钟通常是几千美元(e.g. <a target="_blank" rel="noopener" href="https://thinksrs.com/products/fs725.html)%E3%80%82%E9%93%B7%E6%97%B6%E9%92%9F%E5%8F%AF%E8%83%BD%E6%AF%8F%E5%91%A8%E6%BC%82%E7%A7%BB%E5%87%A0%E5%BE%AE%E7%A7%92%EF%BC%8C%E6%89%80%E4%BB%A5%E6%AF%8F%E9%9A%94%E4%B8%80%E6%AE%B5%E6%97%B6%E9%97%B4%E5%B0%B1%E9%9C%80%E8%A6%81%E9%87%8D%E6%96%B0%E5%90%8C%E6%AD%A5%E5%88%B0UTC(%E9%80%9A%E5%B8%B8%E6%98%AF%E9%80%9A%E8%BF%87GPS)%E3%80%82%E9%93%AF%E9%92%9F%E7%9A%84%E4%BB%B7%E6%A0%BC%E5%A4%A7%E6%A6%82%E6%98%AF5%E4%B8%87%E7%BE%8E%E5%85%83;HP">https://thinksrs.com/products/fs725.html)。铷时钟可能每周漂移几微秒，所以每隔一段时间就需要重新同步到UTC(通常是通过GPS)。铯钟的价格大概是5万美元;HP</a> 5071A就是一个很好的例子。铯钟不会漂移。当然，任何一个时钟都可能发生故障或电源故障，所以即使有完美的铯时钟，你仍然需要多个铯时钟，并能够同步到UTC。我猜，基于价格，Spanner使用的是与GPS接收器同步的铷时钟。</p>
+<h4 id="Q-TrueTime如何以一种保证包含正确时间的方式选择间隔"><a href="#Q-TrueTime如何以一种保证包含正确时间的方式选择间隔" class="headerlink" title="Q: TrueTime如何以一种保证包含正确时间的方式选择间隔?"></a>Q: TrueTime如何以一种保证包含正确时间的方式选择间隔?</h4><p>A: 这里有一个简单的例子来说明它所使用的推理方法。</p>
+<p>假设主时间服务器S1拥有正确的时间(来自GPS或原子钟)。S2向S1发送请求，询问时间，并得到响应。响应显示“10:00:00 AM”，它在S2发送请求后两秒到达(可以合理地假设S2可以计算事情所花费的时间，即使它不知道绝对时间)。由于整个请求&#x2F;响应花费了两秒，S2可以推断网络可能将请求延迟了两秒;或者将响应延迟两秒;但仅此而已。因此S2可以得出结论，在它接收到响应的那一刻，正确的时间必须在09:59:58和10:00:02之间。</p>
+<h4 id="Q-外部一致性与线性一致性和序列化有什么关系"><a href="#Q-外部一致性与线性一致性和序列化有什么关系" class="headerlink" title="Q: 外部一致性与线性一致性和序列化有什么关系?"></a>Q: 外部一致性与线性一致性和序列化有什么关系?</h4><p>A: 外部一致性似乎等同于线性化，但应用于整个事务，而不是单个的读写。外部一致性似乎也等同于严格的串行性，这是添加了等效串行顺序必须服从实时顺序的约束的串行性。关键属性是，如果事务T1完成，然后(随后实时)事务T2开始，T2必须看到T1的写入。</p>
+<h4 id="Q-为什么外部一致性是可取的"><a href="#Q-为什么外部一致性是可取的" class="headerlink" title="Q: 为什么外部一致性是可取的?"></a>Q: 为什么外部一致性是可取的?</h4><p>A: 假设哈特谢普苏特通过圣何塞数据中心的网络服务器修改了她的工作组共享的一个帐户的密码。她低声说把新密码隔着隔间告诉了她的同事卡桑德拉。卡桑德拉通过位于圣马特奥的另一个数据中心的网络服务器登录了这个账户。外部一致性保证Cassandra将观察到密码的更改，而不是，例如，看到一个陈旧的副本。</p>
+<h4 id="Q-云Spanner使用Raft而不是Paxos"><a href="#Q-云Spanner使用Raft而不是Paxos" class="headerlink" title="Q: 云Spanner使用Raft而不是Paxos?"></a>Q: 云Spanner使用Raft而不是Paxos?</h4><p>A: 是的。在这篇论文的层面上没有区别。在Spanner构建的时候，Raft还不存在，谷歌已经有了一个调优的可靠的Paxos实现。看看Chandra等人的论文Paxos Made Live。</p>
+<h4 id="Q-Spanner的Commit-Wait有什么目的"><a href="#Q-Spanner的Commit-Wait有什么目的" class="headerlink" title="Q: Spanner的Commit Wait有什么目的?"></a>Q: Spanner的Commit Wait有什么目的?</h4><p>A: 提交等待确保读&#x2F;写事务在其时间戳中保证已经过时才完成。这意味着在读&#x2F;写事务完成后启动的只读事务保证具有更高的时间戳，从而可以看到读&#x2F;写事务的写操作。这有助于实现外部一致性的保证:如果T1在T2开始之前完成，T2将以相同的串行顺序在T1之后完成(即T2将看到T1的写入)。</p>
+<h4 id="Q-什么地方使用Spanner"><a href="#Q-什么地方使用Spanner" class="headerlink" title="Q: 什么地方使用Spanner?"></a>Q: 什么地方使用Spanner?</h4><p>A: 据说有数百个谷歌服务依赖于Spanner。本文介绍了谷歌广告系统对其的使用。谷歌的Zanzibar授权系统使用Spanner。它以云Spanner的形式提供给谷歌的云客户。CockroachDB开源数据库是基于Spanner设计的。</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ol>
+<li><a target="_blank" rel="noopener" href="https://int64.me/2017/Spanner%20%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0.html">Spanner 论文笔记 | Life is magic. Coding is art.</a></li>
+<li><a target="_blank" rel="noopener" href="https://pdos.csail.mit.edu/6.824/papers/spanner.pdf">spanner论文</a></li>
+<li><a target="_blank" rel="noopener" href="https://pdos.csail.mit.edu/6.824/papers/spanner.pdf">MIT6.824 Spanner讲义</a></li>
+</ol>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="http://example.com">John Doe</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="http://example.com/2023/01/12/%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%8B%E5%8A%A1/Spanner%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/">http://example.com/2023/01/12/%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%8B%E5%8A%A1/Spanner%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2022/12/05/hello-world/"><img class="next-cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">Next Post</div><div class="next_info">Hello World</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">John Doe</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">2</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Catalog</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Spanner-%E5%85%A8%E7%90%83%E5%8C%96%E5%88%86%E5%B8%83%E5%BC%8F%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="toc-number">1.</span> <span class="toc-text">Spanner 全球化分布式数据库</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Implementation"><span class="toc-number">1.1.</span> <span class="toc-text">Implementation</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Spanner%E9%83%A8%E7%BD%B2"><span class="toc-number">1.1.1.</span> <span class="toc-text">Spanner部署</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Spanserver-SoftWare-Stack"><span class="toc-number">1.1.2.</span> <span class="toc-text">Spanserver SoftWare Stack</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BB%84%E6%88%90%E9%83%A8%E5%88%86"><span class="toc-number">1.1.2.1.</span> <span class="toc-text">组成部分</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BB%93%E6%9E%84%E5%88%86%E6%9E%90"><span class="toc-number">1.1.2.2.</span> <span class="toc-text">结构分析</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#directory"><span class="toc-number">1.1.3.</span> <span class="toc-text">directory</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Data-Model"><span class="toc-number">1.1.4.</span> <span class="toc-text">Data Model</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#High-level-Organization"><span class="toc-number">1.1.5.</span> <span class="toc-text">High-level Organization</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%9B%A0"><span class="toc-number">1.1.5.1.</span> <span class="toc-text">设计原因</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Challenge"><span class="toc-number">1.2.</span> <span class="toc-text">Challenge</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Read-of-local-Relipca-yield-latest-write"><span class="toc-number">1.2.1.</span> <span class="toc-text">Read of local Relipca yield latest write</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Trasaction-across-shard"><span class="toc-number">1.2.2.</span> <span class="toc-text">Trasaction across shard</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Transaction-must-be-serializable"><span class="toc-number">1.2.3.</span> <span class="toc-text">Transaction must be serializable</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#True-Time"><span class="toc-number">1.3.</span> <span class="toc-text">True Time</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Concurrent-control"><span class="toc-number">1.4.</span> <span class="toc-text">Concurrent control</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Timestamp-Management"><span class="toc-number">1.4.1.</span> <span class="toc-text">Timestamp Management</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%BB%E5%86%99%E4%BA%8B%E5%8A%A1"><span class="toc-number">1.4.2.</span> <span class="toc-text">读写事务</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#RW-Transaction-without-TS"><span class="toc-number">1.4.2.1.</span> <span class="toc-text">RW Transaction without TS</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Assigning-Timestamp-to-RW-Transaction"><span class="toc-number">1.4.2.2.</span> <span class="toc-text">Assigning Timestamp to RW Transaction</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#detail"><span class="toc-number">1.4.2.3.</span> <span class="toc-text">detail</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%AA%E8%AF%BB%E4%BA%8B%E5%8A%A1-%E9%AB%98%E6%80%A7%E8%83%BD%E8%AF%BB"><span class="toc-number">1.4.3.</span> <span class="toc-text">只读事务:高性能读</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Corretness"><span class="toc-number">1.4.3.1.</span> <span class="toc-text">Corretness</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Bad-Plan-%E5%8F%AA%E8%AF%BB%E6%93%8D%E4%BD%9C%E8%AF%BB%E5%8F%96%E6%9C%80%E6%96%B0%E6%8F%90%E4%BA%A4%E7%9A%84%E5%80%BC"><span class="toc-number">1.4.3.2.</span> <span class="toc-text">Bad Plan 只读操作读取最新提交的值</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#R-x2F-O-with-Snapshot-isolation"><span class="toc-number">1.4.3.3.</span> <span class="toc-text">R&#x2F;O with Snapshot isolation</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#R-x2F-O-from-Local-Replica-non-Leader-of-Paxos"><span class="toc-number">1.4.3.4.</span> <span class="toc-text">R&#x2F;O from Local Replica(non-Leader of Paxos)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Clock-must-be-perfect"><span class="toc-number">1.4.3.5.</span> <span class="toc-text">Clock must be perfect</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Timestamp-are-interval"><span class="toc-number">1.4.3.6.</span> <span class="toc-text">Timestamp are interval</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#update-example-with-interval"><span class="toc-number">1.4.3.7.</span> <span class="toc-text">update example with interval</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#detail-1"><span class="toc-number">1.4.3.8.</span> <span class="toc-text">detail</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#discussion"><span class="toc-number">1.4.4.</span> <span class="toc-text">discussion</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#FQA"><span class="toc-number">1.5.</span> <span class="toc-text">FQA</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Q-%E5%8E%9F%E5%AD%90%E6%97%B6%E9%92%9F%E6%98%AF%E4%BB%80%E4%B9%88"><span class="toc-number">1.5.0.1.</span> <span class="toc-text">Q: 原子时钟是什么?</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Q-Spanner%E4%BD%BF%E7%94%A8%E4%BB%80%E4%B9%88%E7%A7%8D%E7%B1%BB%E7%9A%84%E5%8E%9F%E5%AD%90%E6%97%B6%E9%92%9F"><span class="toc-number">1.5.0.2.</span> <span class="toc-text">Q: Spanner使用什么种类的原子时钟?</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Q-TrueTime%E5%A6%82%E4%BD%95%E4%BB%A5%E4%B8%80%E7%A7%8D%E4%BF%9D%E8%AF%81%E5%8C%85%E5%90%AB%E6%AD%A3%E7%A1%AE%E6%97%B6%E9%97%B4%E7%9A%84%E6%96%B9%E5%BC%8F%E9%80%89%E6%8B%A9%E9%97%B4%E9%9A%94"><span class="toc-number">1.5.0.3.</span> <span class="toc-text">Q: TrueTime如何以一种保证包含正确时间的方式选择间隔?</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Q-%E5%A4%96%E9%83%A8%E4%B8%80%E8%87%B4%E6%80%A7%E4%B8%8E%E7%BA%BF%E6%80%A7%E4%B8%80%E8%87%B4%E6%80%A7%E5%92%8C%E5%BA%8F%E5%88%97%E5%8C%96%E6%9C%89%E4%BB%80%E4%B9%88%E5%85%B3%E7%B3%BB"><span class="toc-number">1.5.0.4.</span> <span class="toc-text">Q: 外部一致性与线性一致性和序列化有什么关系?</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Q-%E4%B8%BA%E4%BB%80%E4%B9%88%E5%A4%96%E9%83%A8%E4%B8%80%E8%87%B4%E6%80%A7%E6%98%AF%E5%8F%AF%E5%8F%96%E7%9A%84"><span class="toc-number">1.5.0.5.</span> <span class="toc-text">Q: 为什么外部一致性是可取的?</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Q-%E4%BA%91Spanner%E4%BD%BF%E7%94%A8Raft%E8%80%8C%E4%B8%8D%E6%98%AFPaxos"><span class="toc-number">1.5.0.6.</span> <span class="toc-text">Q: 云Spanner使用Raft而不是Paxos?</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Q-Spanner%E7%9A%84Commit-Wait%E6%9C%89%E4%BB%80%E4%B9%88%E7%9B%AE%E7%9A%84"><span class="toc-number">1.5.0.7.</span> <span class="toc-text">Q: Spanner的Commit Wait有什么目的?</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Q-%E4%BB%80%E4%B9%88%E5%9C%B0%E6%96%B9%E4%BD%BF%E7%94%A8Spanner"><span class="toc-number">1.5.0.8.</span> <span class="toc-text">Q: 什么地方使用Spanner?</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%82%E8%80%83"><span class="toc-number">1.6.</span> <span class="toc-text">参考</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2023/01/12/%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%8B%E5%8A%A1/Spanner%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/" title="No title"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="No title"/></a><div class="content"><a class="title" href="/2023/01/12/%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%8B%E5%8A%A1/Spanner%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/" title="No title">No title</a><time datetime="2023-01-12T14:57:20.371Z" title="Created 2023-01-12 22:57:20">2023-01-12</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/12/05/hello-world/" title="Hello World"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Hello World"/></a><div class="content"><a class="title" href="/2022/12/05/hello-world/" title="Hello World">Hello World</a><time datetime="2022-12-05T14:07:54.550Z" title="Created 2022-12-05 22:07:54">2022-12-05</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By John Doe</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back To Top"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
