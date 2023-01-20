@@ -534,7 +534,7 @@ svg.social_icon {
 }
 
 .loading-img {
-  background: url(https://ember-img-1308152850.cos.ap-chongqing.myqcloud.com/avtar.jpg) no-repeat center center;
+  background: url(/assets/avatar.png) no-repeat center center;
   background-size: cover;
 }
 
@@ -809,15 +809,21 @@ center#name-container {
 
 @font-face {
   font-family: 'Ember';
+  font-weight: 400;
   /* 字体名自定义即可 */
   /* src: url('https://cdn.jsdelivr.net/gh/tzy13755126023/BLOG_SOURCE/font/ZhuZiAWan.woff2'); */
-  src: url('https://npm.elemecdn.com/ethan4116-blog/lib/font/ZhuZiAWan.ttf');
+  src: url(//code.oppo.com/content/dam/oppo/common/fonts/font2/new-font/OPPOSansOS2-5000-Regular.woff2) format('woff2');
   /* 字体文件路径 */
   font-display: swap;
 }
 
+
+
 body,
 .gitcalendar {
-  font-family: tzy !important;
+  font-family: Ember !important;
 }
 
+h1 {
+	font-weight: 500;
+}
