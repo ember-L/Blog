@@ -1,70 +1,36 @@
-[data-theme="light"] {
-  --Ember-theme: #3b70fc;
-  --Ember-theme-op: #4259ef23;
-  --Ember-blue: #3b70fc;
-  --Ember-red: #d8213c;
-  --Ember-pink: #ff7c7c;
-  --Ember-green: #57bd6a;
-  --Ember-fontcolor: #363636;
-  --Ember-background: #f7f9fe;
-  --Ember-reverse: #000;
-  --Ember-maskbg: rgba(255, 255, 255, 0.6);
-  --Ember-maskbgdeep: rgba(255, 255, 255, 0.85);
-  --Ember-hovertext: var(--Ember-theme);
-  --Ember-ahoverbg: #f7f7fa;
-  --Ember-lighttext: #6f42c1;
-  --Ember-secondtext: rgba(60, 60, 67, 0.6);
-  --Ember-scrollbar: rgba(60, 60, 67, 0.4);
-  --Ember-card-btn-bg: #edf0f7;
-  --Ember-post-blockquote-bg: #fafcff;
-  --Ember-post-tabs-bg: #f2f5f8;
-  --Ember-secondbg: #edf0f7;
-  --Ember-shadow-nav: 0 5px 12px -5px rgba(102, 68, 68, 0.05);
-  --Ember-card-bg: #fff;
-  --Ember-shadow-lightblack: 0 5px 12px -5px rgba(102, 68, 68, 0);
-  --Ember-shadow-light2black: 0 5px 12px -5px rgba(102, 68, 68, 0);
-  --Ember-card-border: #e3e8f7;
-  --Ember-code-bg: #3b70fc;
-  --Ember-code-color: #f7f7fa;
-  --Ember-copyright-border: #f6f6f6;
-}
-/*颜色代码*/
 :root {
-  --Ember-theme-op: #4259ef23;
-  --Ember-gray-op: #9999992b;
-  --Ember-theme-top: var(--Ember-theme);
-  --Ember-white: #fff;
-  --Ember-white-op: rgba(255, 255, 255, 0.2);
-  --Ember-black: #000;
-  --Ember-black-op: rgba(0, 0, 0, 0.2);
-  --Ember-none: rgba(0, 0, 0, 0);
+  --Ember-main: #fe8d2f;
+  --Ember-theme:#fe8d2f;
+  --Ember-card-bg: #fff ;
   --Ember-gray: #999999;
-  --Ember-yellow: #ffc93e;
-  --Ember-border-radius: 8px;
-  --Ember-main: var(--Ember-theme);
-  --Ember-main-op: var(--Ember-theme-op);
-  --Ember-shadow-theme: 0 8px 12px -3px var(--Ember-theme-op);
-  --Ember-shadow-main: 0 8px 12px -3px var(--Ember-main-op);
-  --Ember-shadow-blue: 0 8px 12px -3px rgba(40, 109, 234, 0.2);
-  --Ember-shadow-white: 0 8px 12px -3px rgba(255, 255, 255, 0.2);
-  --Ember-shadow-black: 0 0 12px 4px rgba(0, 0, 0, 0.05);
-  --Ember-shadow-yellow: 0px 38px 77px -26px rgba(255, 201, 62, 0.12);
-  --Ember-shadow-red: 0 8px 12px -3px #ee7d7936;
-  --Ember-shadow-green: 0 8px 12px -3px #87ee7936;
+  --Ember-white: #fff;
   --Ember-shadow-border: 0 8px 16px -4px #2c2d300c;
-  --Ember-shadow-blackdeep: 0 2px 16px -3px rgba(0, 0, 0, 0.15);
-  --Ember-logo-color: linear-gradient(215deg, #4584ff 30%, #ff7676 70%);
-  --style-border: 1px solid var(--Ember-card-border);
-  --style-border-hover: 1px solid var(--Ember-main);
-  --style-border-dashed: 1px dashed var(--Ember-theme-op);
-  --style-border-avatar: 4px solid var(--Ember-background);
-  --style-border-always: 1px solid var(--Ember-card-border);
-  --Ember-white-acrylic1: #fefeff !important;
-  --Ember-white-acrylic2: #fcfdff !important;
-  --Ember-black-acrylic2: #08080a !important;
-  --Ember-black-acrylic1: #0b0b0e !important;
-  --Ember-main-none: #b8b8b800 !important;
   --Ember-transparent-border: transparent;
+
+  --font-color: #4c4948;
+  --trans-light: rgba(255, 255, 255, 0.95);
+  --trans-dark: rgba(25, 25, 25, 0.88);
+  --border-style: 1px solid rgb(169, 169, 169);
+  --backdrop-filter: blur(5px) saturate(150%);
+  --btn-bg: #fe8d2f;
+  --btn-color: #fff;
+  --btn-hover-color:   #fdc4f5;
+
+  --style-border-always: 1px solid var(--Ember-card-border);
+  --reward-pop: #f5f5f5;
+}
+
+[data-theme="dark"]{
+  --Ember-background: #18171d;
+  --font-color: rgba(255,255,255,0.7);
+  --Ember-card-bg: #1d1e22;
+  --Ember-maskbg: rgba(0, 0, 0, 0.6);
+  --btn-color: rgba(255,255,255,0.7);
+  --preloader-color: rgba(255,255,255,0.7);
+  --light-grey:rgba(255,255,255,0.7);
+  --tab-botton-color:rgba(255,255,255,0.7);
+  --btn-hover-color: #787878;
+  --reward-pop: #2c2c2c;
 }
 /* 页脚与头图透明 */
 #footer {
@@ -285,12 +251,7 @@ h6::before {
 }
 
 
-:root {
-  --trans-light: rgba(255, 255, 255, 0.88);
-  --trans-dark: rgba(25, 25, 25, 0.88);
-  --border-style: 1px solid rgb(169, 169, 169);
-  --backdrop-filter: blur(5px) saturate(150%);
-}
+
 
 /* 首页文章卡片 */
 #recent-posts > .recent-post-item {
@@ -310,7 +271,6 @@ h6::before {
 
 /* 文章页、归档页、普通页面 */
 div#post,
-div#page,
 div#archive {
   background: var(--trans-light);
   backdrop-filter: var(--backdrop-filter);
@@ -759,7 +719,7 @@ center#name-container {
 /* 公众号 Start */
 
 [data-theme='light'] #aside-content .card-widget#card-wechat {
-  background: #fe8d2f !important;
+  background: var(--Ember-theme) !important;
 }
 
 #aside-content .card-widget#card-wechat {
@@ -832,7 +792,6 @@ center#name-container {
 /* 公众号 End */
 
 /* Twikoo 评论样式 */
-
 .tk-input .el-textarea__inner {
   min-height: 120px !important;
 }
@@ -872,26 +831,4 @@ center#name-container {
       max-width: calc(50% - 10px);
       box-sizing: border-box;
   }
-  
-}
-
-@font-face {
-  font-family: 'Ember';
-  font-weight: 400;
-  /* 字体名自定义即可 */
-  /* src: url('https://cdn.jsdelivr.net/gh/tzy13755126023/BLOG_SOURCE/font/ZhuZiAWan.woff2'); */
-  src: url(//code.oppo.com/content/dam/oppo/common/fonts/font2/new-font/OPPOSansOS2-5000-Regular.woff2) format('woff2');
-  /* 字体文件路径 */
-  font-display: swap;
-}
-
-
-
-body,
-.gitcalendar {
-  font-family: Ember !important;
-}
-
-h1 {
-	font-weight: 500;
 }

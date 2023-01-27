@@ -1340,7 +1340,7 @@ canvas:not(#ribbon-canvas),
   }
 }
 :root {
-  --global-font-size: 15px;
+  --global-font-size: 16px;
   --global-bg: #fff;
   --font-color: #4c4948;
   --hr-border: #fec697;
@@ -1679,8 +1679,8 @@ figure.highlight pre .javascript .function {
 }
 #article-container pre,
 #article-container code {
-  font-size: 14px;
-  font-family: Consolas_1, var(--global-font), "Microsoft YaHei", Menlo, "PingFang SC", "Microsoft JhengHei", sans-serif !important;
+  font-size: 16px;
+  font-family: JetBrainsMono-Regular, Consolas_1, var(--global-font), "Microsoft YaHei", Menlo, "PingFang SC", "Microsoft JhengHei", sans-serif !important;
 }
 #article-container code {
   padding: 2px 4px;
@@ -1707,7 +1707,7 @@ figure.highlight pre .javascript .function {
 #article-container figure.highlight figcaption,
 #article-container figure.highlight .caption {
   padding: 6px 0 2px 14px;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1em;
 }
 #article-container figure.highlight figcaption a,
@@ -1739,7 +1739,7 @@ figure.highlight pre .javascript .function {
   height: 2.15em;
   background: var(--hltools-bg);
   color: var(--hltools-color);
-  font-size: 14px;
+  font-size: 16px;
 }
 #article-container .highlight-tools.closed ~ * {
   display: none;
@@ -1866,7 +1866,7 @@ figure.highlight pre .javascript .function {
   width: 100%;
   background: var(--hlexpand-bg);
   text-align: center;
-  font-size: 14px;
+  font-size: 16px;
   cursor: pointer;
 }
 #article-container .code-expand-btn i {
@@ -4521,7 +4521,8 @@ h1.page-title + .tag-cloud-list {
   -ms-transition: all 0.4s;
   transition: all 0.4s;
   border-radius: 30px;
-  width: 15%;
+  width: 18%;
+  position: relative;
 }
 .post-reward .reward-button:hover {
   -webkit-box-shadow: inset 20em 0 0 0 var(--btn-hover-color);
@@ -4542,7 +4543,7 @@ h1.page-title + .tag-cloud-list {
   z-index: 100;
   display: none;
   padding: 0 0 15px;
-  width: 150%;
+  width: 185%;
 }
 .post-reward .reward-button .reward-main .reward-all {
   display: -webkit-box;
@@ -6280,9 +6281,9 @@ blockquote.pullquote.right {
 #gitcalendar {
   margin: 0 auto;
   border-radius: 24px;
-  background: #ffffff;
+  background: var(--Ember-card-bg);
   border: var(--style-border-always);
-  box-shadow: #a2a2a2;
+  box-shadow: var(--Ember-shadow-border);
   position: relative;
   padding: 1rem 2rem;
   overflow: hidden;
@@ -6335,7 +6336,7 @@ blockquote.pullquote.right {
   background: #6bdf8f;
   position: absolute;
   border-radius: 50%;
-  border: 6px solid #ffffff;
+  border: 6px solid var(--Ember-background);
   top: 50%;
   left: 50%;
   transform: translate(35px, 45px);
@@ -6353,7 +6354,7 @@ blockquote.pullquote.right {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  color: #ffffff;
+  color: var(--Ember-white);
   background: linear-gradient(120deg, #5b27ff 0, #00d4ff 100%);
   background-size: 200%;
   animation: gradient 15s ease infinite;
@@ -6363,9 +6364,9 @@ blockquote.pullquote.right {
 .author-content-item {
   width: 49%;
   border-radius: 24px;
-  background: #ffffff;
-  border: var(--HiPeach-transparent-border);
-  box-shadow: #c0c6d8;
+  background: var(--Ember-card-bg);
+  border: var(--Ember-transparent-border);
+  box-shadow: var(--Ember-shadow-border);
   position: relative;
   padding: 1rem 2rem;
   overflow: hidden;
@@ -6458,7 +6459,7 @@ blockquote.pullquote.right {
   width: 39%;
   background: url(/assets/about/51la.jpg) no-repeat top;
   background-size: cover;
-  color: #ffffff;
+  color: var(--Ember-white);
   overflow: hidden;
 }
 #about-page .about-statistic::after {
@@ -6494,7 +6495,7 @@ blockquote.pullquote.right {
   font-size: 16px;
   border-radius: 15px;
   width: 100%;
-  color: #ffffff;
+  color: var(--Ember-white);
   display: flex;
   justify-content: space-between;
   flex-direction: row;
@@ -6521,14 +6522,14 @@ blockquote.pullquote.right {
 }
 
 .post-tips {
-  color: #e3e8f7;
+  color: var(--Ember-gray);
   font-size: 14px;
   position: absolute;
   bottom: 1rem;
   left: 2rem;
 }
 .post-tips a {
-  color: #e3e8f7 !important;
+  color: var(--Ember-gray) !important;
   border: none !important;
 }
 .author-content-item .card-content .banner-button-group {
@@ -6541,7 +6542,7 @@ blockquote.pullquote.right {
   width: 124px;
   border-radius: 20px;
   justify-content: center;
-  background: #ffffff;
+  background: var(--Ember-card-bg);
   color: var(--font-color);
   display: flex;
   align-items: center;
@@ -6559,8 +6560,8 @@ blockquote.pullquote.right {
 }
 
 .author-content-item .card-content .banner-button-group .banner-button:hover {
-  background: #ffffff;
-  color: #ffffff;
+  background: var(--Ember-main);
+  color: var(--Ember-white);
   border-radius: 20px !important;
 }
 .author-content-item.personalities {
@@ -6639,7 +6640,7 @@ blockquote.pullquote.right {
   bottom: 0;
   left: 0;
   width: 100%;
-  background: #ffffff;
+  background: var(--Ember-maskbg);
   padding: 0.5rem 2rem;
   backdrop-filter: saturate(180%) blur(20px);
   -webkit-backdrop-filter: blur(20px);
@@ -6700,7 +6701,7 @@ blockquote.pullquote.right {
 }
 
 .author-content-item.single.reward .reward-list-updateDate {
-  color: #e3e8f7;
+  color: var(--Ember-gray);
   font-size: 14px;
 }
 
@@ -6832,7 +6833,7 @@ blockquote.pullquote.right {
   transform: translateY(calc(var(--front-y-multiplier) * 0.3181818182rem / 2)) scaleY(var(--front-scale-multiplier));
 }
 .tip-button__text {
-  color: #fff;
+  color: var(--Ember-white);
   margin-right: 1.8rem;
   opacity: 1;
   position: relative;
@@ -6900,7 +6901,7 @@ blockquote.pullquote.right {
   flex-direction: column;
   justify-content: center;
   background: linear-gradient(120deg, #ff27e8 0, #ff8000 100%);
-  color: #ffffff;
+  color: var(--Ember-white);
   background-size: 200%;
   animation: gradient 15s ease infinite;
   min-height: 200px;
@@ -6930,7 +6931,7 @@ blockquote.pullquote.right {
   background-size: cover;
   min-height: 300px;
   overflow: hidden;
-  color: #ffffff;
+  color: var(--Ember-white);
   width: 59%;
 }
 .author-content-item .content-bottom {
@@ -6984,14 +6985,14 @@ blockquote.pullquote.right {
   background: url(/assets/about/IT.jpg) no-repeat;
   background-size: cover;
   min-height: 230px;
-  color: #ffffff;
+  color: var(--Ember-white);
 }
 
 .author-content-item.like-music {
   background: url(/assets/about/lauv_feelings.jpg) no-repeat top;
   background-size: cover;
   min-height: 400px;
-  color: #ffffff;
+  color: var(--Ember-white);
   overflow: hidden;
 }
 
@@ -7066,7 +7067,7 @@ blockquote.pullquote.right {
     /* border-radius: 0; */
     padding: 0 1rem !important;
     box-shadow: none !important;
-    background: #ffffff;
+    background: var(--Ember-background);
   }
   .author-content-item .card-content .banner-button-group .banner-button-text {
     display: none;
@@ -7088,8 +7089,8 @@ blockquote.pullquote.right {
     margin-left: 80px;
   }
   .author-content-item .card-content .banner-button-group .banner-button:hover i {
-    background: #ffffff !important;
-    color: #ffffff;
+    background: var(--Ember-background) !important;
+    color: var(--Ember-theme);
   }
   #selfInfo-content-year {
     width: 90px;
@@ -7120,7 +7121,7 @@ blockquote.pullquote.right {
   border: var(--style-border-always);
   width: calc((100% / 3) - 0.5rem);
   margin: 0 0.25rem 0.5rem 0.25rem;
-  box-shadow: #c0c6d8;
+  box-shadow: var(--Ember-shadow-border);
 }
 
 .reward-list-item .reward-list-item-name {
@@ -7149,7 +7150,7 @@ blockquote.pullquote.right {
 /*日期文字*/
 .reward-list-item .reward-list-item-time {
   font-size: 12px;
-  color: var(--HiPeach-secondtext);
+  color: var(--Ember-secondtext);
   white-space: nowrap;
 }
 
@@ -7178,7 +7179,7 @@ blockquote.pullquote.right {
 .post-reward .reward-button {
   display: inline-block;
   padding: 4px 24px;
-  background: #ffffff;
+  background: var(--btn-bg);
   color: var(--btn-color);
   cursor: pointer;
 }
@@ -7254,7 +7255,7 @@ blockquote.pullquote.right {
 }
 
 .author-content-item.single.reward .reward-list-updateDate {
-  color: #e3e8f7;
+  color: var(--Ember-gray);
   font-size: 14px;
 }
 
@@ -7321,7 +7322,7 @@ blockquote.pullquote.right {
 
   .layout>div:first-child:not(.recent-posts) {
     padding: 1rem 1rem!important;
-    background: #ffffff;
+    background: var(--Ember-background);
     box-shadow: none!important;
   }
 
@@ -7349,8 +7350,8 @@ blockquote.pullquote.right {
   }
 
   .author-content-item .card-content .banner-button-group .banner-button:hover i {
-    background: #ffffff!important;
-    color: #ffffff;
+    background: var(--Ember-background)!important;
+    color: var(--Ember-theme);
   }
 
   #selfInfo-content-year {

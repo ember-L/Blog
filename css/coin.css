@@ -70,6 +70,7 @@
   transform: translateX(-50%);
   transition: height 250ms ease-in-out 400ms, width 250ms ease-in-out 300ms;
   width: 100%;
+  z-index: 2;
 }
 .tip-button::after {
   bottom: -1rem;
