@@ -4,9 +4,9 @@
   --Ember-card-bg: #fff ;
   --Ember-gray: #999999;
   --Ember-white: #fff;
+  --Ember-card-border: #c0c6d8;
   --Ember-shadow-border: 0 8px 16px -4px #2c2d300c;
   --Ember-transparent-border: transparent;
-
   --font-color: #4c4948;
   --trans-light: rgba(255, 255, 255, 0.95);
   --trans-dark: rgba(25, 25, 25, 0.88);
@@ -15,7 +15,7 @@
   --btn-bg: #fe8d2f;
   --btn-color: #fff;
   --btn-hover-color:   #fdc4f5;
-
+  --style-border: 1px solid var(--Ember-card-border);
   --style-border-always: 1px solid var(--Ember-card-border);
   --reward-pop: #f5f5f5;
 }
@@ -271,6 +271,7 @@ h6::before {
 
 /* 文章页、归档页、普通页面 */
 div#post,
+
 div#archive {
   background: var(--trans-light);
   backdrop-filter: var(--backdrop-filter);
