@@ -271,8 +271,8 @@ h6::before {
 
 /* 文章页、归档页、普通页面 */
 div#post,
-
 div#archive {
+  font-size: 18px;
   background: var(--trans-light);
   backdrop-filter: var(--backdrop-filter);
   border: var(--border-style);
