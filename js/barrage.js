@@ -1,1 +1,18 @@
-function switchCommentBarrage(){let e=window.localStorage.getItem("commentBarrageDisplay");document.getElementById("comment-barrage").style.display="false"===e?"block":"none",window.localStorage.setItem("commentBarrageDisplay","false"===e?"undefined":"false",864e5)}if(document.querySelector("#bber-talk"))var swiper=new Swiper(".swiper-container",{direction:"vertical",loop:!0,autoplay:{delay:3e3,pauseOnMouseEnter:!0}});
+// 切换热评
+function switchCommentBarrage () {
+    let flag = window.localStorage.getItem('commentBarrageDisplay') // undefined || false
+    document.getElementById('comment-barrage').style.display = flag === 'false' ? 'block' : 'none'
+    // 本地缓存一天，刷新或切换页面时仍 隐藏或显示 热评。
+    window.localStorage.setItem('commentBarrageDisplay', flag === 'false' ? 'undefined' : 'false', 86400000)
+  }
+
+  if (document.querySelector('#bber-talk')) {
+    var swiper = new Swiper('.swiper-container', {
+      direction: 'vertical', // 垂直切换选项
+      loop: true,
+      autoplay: {
+      delay: 3000,
+      pauseOnMouseEnter: true
+    },
+    });
+  }
